@@ -17,9 +17,6 @@ type (
 		Response interface{} `json:"response"`
 	}
 )
-type lalala struct {
-	sss string 
-}
 
 type CheckoutRequest struct {
 	Sender_account    string `json:"sender_account"`
