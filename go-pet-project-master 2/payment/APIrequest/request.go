@@ -17,7 +17,9 @@ type (
 		Response interface{} `json:"response"`
 	}
 )
-
+type sss {
+	ss string
+}
 type CheckoutRequest struct {
 	Sender_account    string `json:"sender_account"`
 	OrderId           string `json:"order_id"`
