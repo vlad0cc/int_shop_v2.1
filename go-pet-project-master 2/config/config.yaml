@@ -1,0 +1,23 @@
+db:
+  host: "localhost"
+  user: "postgres"
+  dbname: "bookstore"
+  port: "5432"
+  pass : "Adg12332,"
+
+app:
+  hash: "alenov"
+
+payment:
+  callbackurl: ""
+  checkoutUrl: "https://pay.fondy.eu/api/checkout/url/"
+  merchantId: "1396424"
+  merchantPassword: "test"
+
+redis:
+  host: "localhost:6379"
+  password: ""
+  db: 
+
+mongoDB:
+  host: "mongodb://localhost:27017"

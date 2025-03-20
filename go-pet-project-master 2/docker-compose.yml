@@ -1,0 +1,50 @@
+version: '3'
+services:
+  bookstore:
+    build: ./
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+      - mongoDb
+    environment:
+      PORT: 8080
+    networks:
+      - backend
+
+  postgres:
+    image: "postgres" 
+    env_file:
+      - database.env 
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432 
+    networks:
+      - backend
+
+  mongoDb:
+    image: "mongo"
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - backend
+  
+volumes:
+  database-data:
+  mongodb_data:
+  redis_data:
+
+networks:
+  backend:
